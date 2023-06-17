@@ -1,19 +1,18 @@
 function createTaskHtml(newActivity, newPlace, aloneOrGroup, newDate) {
     const html = `
-    <div class="card-header">
-        Activity To Be Done
-    </div>
+    <div id="root" class="card">
     <div class="card-body">
-        <p class="card-text">Name: ${newActivity}</p>
-        <p class="card-text">Place: ${newPlace}</p>
-        <p class="card-text">With: ${aloneOrGroup}</p>
-        <p class="card-text">Date: ${newDate}</p>
+    <p class="card-text">Name: ${newActivity}</p>
+    <p class="card-text">Place: ${newPlace}</p>
+    <p class="card-text">With: ${aloneOrGroup}</p>
+    <p class="card-text">Date: ${newDate}</p>
     </div>
     <div class="card-footer">
         Status:
         <a href="#" class="btn btn-success">Done</a>
         <a href="#" class="btn btn-danger">Delete</a>
     </div>
+</div>
     `;
     return html;
 }

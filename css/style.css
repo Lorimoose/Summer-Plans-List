@@ -7,7 +7,7 @@ body {
 }
 
 #title {
-    background-color: #bedde8;
+    background-color: rgb(255, 255, 174);
     color: white;
     margin-bottom: 0px;
     padding: 0px;
@@ -15,7 +15,7 @@ body {
 }
 
 #task-btn {
-    background-color: #bedde8;
+    background-color: rgb(255, 255, 174);
     color: #000000;
     padding: 12px 20px;
     border: none;
@@ -26,7 +26,6 @@ body {
 .card {
     font-size: 1.5rem;
     background-color: white;
-    margin: 100px;
 }
 
 #form {
