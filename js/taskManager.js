@@ -1,6 +1,6 @@
 function createTaskHtml(newActivity, newPlace, aloneOrGroup, newDate) {
   const html = `
-<div class="card col-4 m-5">
+<div class="card col-sm-8 col-md-6 col-lg-4 col-xl-3 m-4">
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
@@ -34,6 +34,9 @@ class TaskManager {
       status,
     };
     this.tasks.push(taskObj);
+
+  
+
   }
   render() {
     const tasksHtmlList = [];
