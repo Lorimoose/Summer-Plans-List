@@ -25,17 +25,19 @@ function validFormFieldInput(event) {
         return false;
     }
 
-    let newDate = document.querySelector("#date").value;
-    if (newDate == "") {
+    let date = document.querySelector("#activity-date").value;
+    if (date == "") {
         alert("Please choose a date.");
         return false;
     }
+    
+    // Clear input fields
     document.getElementById('activity').value = "";
     document.getElementById('place').value = "";
     document.getElementById('with-whom').value = "";
-    document.getElementById('date').value = "";
+    document.getElementById('activity-date').value = "";
 
-    taskManager.addTask(newActivity, newPlace, aloneOrGroup, newDate);
+    taskManager.addTask(newActivity, newPlace, aloneOrGroup, date);
     taskManager.render()
 }
 

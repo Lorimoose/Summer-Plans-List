@@ -1,11 +1,11 @@
-function createTaskHtml(newActivity, newPlace, aloneOrGroup, newDate) {
+function createTaskHtml(newActivity, newPlace, aloneOrGroup, date) {
   const html = `
 <div class="card col-sm-8 col-md-6 col-lg-4 col-xl-3 m-4">
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
         <p class="card-text">With: ${aloneOrGroup}</p>
-        <p class="card-text">Date: ${newDate}</p>
+        <p class="card-text">Date: ${date}</p>
     </div>
     <div class="card-footer">
         Status:
@@ -15,6 +15,12 @@ function createTaskHtml(newActivity, newPlace, aloneOrGroup, newDate) {
 </div>
     `;
   return html;
+}
+
+function formatDate(dateInput){
+let taskDate = new Date(dateInput);
+let formattedDate = taskDate.toDateString();   
+return formattedDate;
 }
 
 class TaskManager {
@@ -34,20 +40,24 @@ class TaskManager {
       status,
     };
     this.tasks.push(taskObj);
-
-  
-
   }
+
   render() {
     const tasksHtmlList = [];
     for (var i = 0; i < this.tasks.length; i++) {
+
+      const date = new Date();
+      const formattedDate = date.toLocaleDateString('en-US');
+
+
       let currentTask = this.tasks[i];
       console.log(currentTask);
+
       let taskHtml = createTaskHtml(
         currentTask["newActivity"],
         currentTask["newPlace"],
         currentTask["aloneOrGroup"],
-        currentTask["newDate"]
+        formattedDate
       );
       tasksHtmlList.push(taskHtml);
     }
