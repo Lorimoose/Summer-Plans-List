@@ -1,6 +1,6 @@
-function createTaskHtml(newActivity, newPlace, aloneOrGroup, date) {
+function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
   const html = `
-<div class="card col-sm-8 col-md-6 col-lg-4 col-xl-3 m-4">
+<div class="card col-auto m-4 id=${id}">
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
@@ -9,7 +9,7 @@ function createTaskHtml(newActivity, newPlace, aloneOrGroup, date) {
     </div>
     <div class="card-footer">
         Status:
-        <a href="#" class="btn btn-success">Done</a>
+        <button class="btn btn-success done-button">Mark As Done</button>
         <a href="#" class="btn btn-danger">Delete</a>
     </div>
 </div>
@@ -17,10 +17,10 @@ function createTaskHtml(newActivity, newPlace, aloneOrGroup, date) {
   return html;
 }
 
-function formatDate(dateInput){
-let taskDate = new Date(dateInput);
-let formattedDate = taskDate.toDateString();   
-return formattedDate;
+function formatDate(dateInput) {
+  let taskDate = new Date(dateInput);
+  let formattedDate = taskDate.toDateString();
+  return formattedDate;
 }
 
 class TaskManager {
@@ -45,15 +45,14 @@ class TaskManager {
   render() {
     const tasksHtmlList = [];
     for (var i = 0; i < this.tasks.length; i++) {
-
       const date = new Date();
-      const formattedDate = date.toLocaleDateString('en-US');
-
+      const formattedDate = date.toDateString();
 
       let currentTask = this.tasks[i];
       console.log(currentTask);
 
       let taskHtml = createTaskHtml(
+        currentTask.id,
         currentTask["newActivity"],
         currentTask["newPlace"],
         currentTask["aloneOrGroup"],
@@ -65,5 +64,16 @@ class TaskManager {
     const tasksHtml = tasksHtmlList.join("\n");
     let root = document.getElementById("root");
     root.innerHTML = tasksHtml;
+  }
+
+  getTaskById(taskId) {
+    let foundTask;
+    for (let i=0; i<this.tasks.length; i++) {
+      let task = this.tasks[i]
+      if (task.id === taskId) {
+        foundTask = task;
+        return foundTask;
+      }
+    }
   }
 }
