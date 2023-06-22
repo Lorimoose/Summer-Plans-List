@@ -68,8 +68,8 @@ tasksList.addEventListener("click", (event) => {
   }
 });
 
-function myFunction() {
+function changeCardColor() {
     const list = document.getElementById("#new").classList;
-    list.add("");
+    list.add("myStyle");
   }
   
