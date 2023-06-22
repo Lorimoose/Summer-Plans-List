@@ -1,6 +1,6 @@
 function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
   const html = `
-<div class="card col-auto m-4 "data-task=${id}>
+<div id="new" class="card col-auto m-4 "data-task=${id}>
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
@@ -9,7 +9,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
     </div>
     <div class="card-footer">
         Status:
-        <button class="btn btn-success done-button">Mark As Done</button>
+        <button class="btn btn-success done-button onclick="myFunction()">Mark As Done</button>
         <button class="btn btn-danger delete-button">Delete</button>
     </div>
 </div>
@@ -19,7 +19,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
 
 function formatDate(dateInput) {
   let taskDate = new Date(dateInput);
-  let formattedDate = taskDate.toDateString();
+  let formattedDate = taskDate.toLocaleDateString();
   return formattedDate;
 }
 
