@@ -3,6 +3,9 @@ const taskManager = new TaskManager();
 const taskHtml = createTaskHtml;
 const tasksList = document.querySelector('#root');
 
+taskManager.load()
+taskManager.render()
+
 
 function validFormFieldInput(event) {
     console.log(taskManager.tasks);
@@ -39,6 +42,7 @@ function validFormFieldInput(event) {
     document.getElementById('activity-date').value = "";
 
     taskManager.addTask(newActivity, newPlace, aloneOrGroup, date);
+    taskManager.save();
     taskManager.render()
 }
 
@@ -48,11 +52,18 @@ submitButton.addEventListener('click', validFormFieldInput);
 
 tasksList.addEventListener('click', (event) => { 
     if (event.target.classList.contains('done-button')) {
-        const parentTask = event.target.parentElement;
-        const taskId = Number(parentTask.dataset.taskId);
-        const task = taskManager.getTaskById(taskId);
+        let parentTask = event.target.parentElement.parentElement;
+        let taskId = Number(parentTask.dataset.task);
+        let task = taskManager.getTaskById(taskId);
         task.status = 'DONE';
-        tasksList.render();
-        tasksList.save();
+        taskManager.save();
+        taskManager.render();
+    }
+    if (event.target.classList.contains('delete-button')) {
+        let parentTask = event.target.parentElement.parentElement;
+        let taskId = Number(parentTask.dataset.task);
+        taskManager.deleteTask(taskId);
+        taskManager.save();
+        taskManager.render();
       }
-});
+})

@@ -1,6 +1,6 @@
 function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
   const html = `
-<div class="card col-auto m-4 id=${id}">
+<div class="card col-auto m-4 "data-task=${id}>
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
@@ -10,7 +10,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
     <div class="card-footer">
         Status:
         <button class="btn btn-success done-button">Mark As Done</button>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <button class="btn btn-danger delete-button">Delete</button>
     </div>
 </div>
     `;
@@ -53,9 +53,9 @@ class TaskManager {
 
       let taskHtml = createTaskHtml(
         currentTask.id,
-        currentTask["newActivity"],
-        currentTask["newPlace"],
-        currentTask["aloneOrGroup"],
+        currentTask.newActivity,
+        currentTask.newPlace,
+        currentTask.aloneOrGroup,
         formattedDate
       );
       tasksHtmlList.push(taskHtml);
@@ -75,5 +75,39 @@ class TaskManager {
         return foundTask;
       }
     }
+  }
+  
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+
+    const currentId = String(this.currentId);
+    localStorage.setItem('currentId', currentId);
+  }
+
+  load() {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      const tasksJson = localStorage.getItem('tasks');
+      this.tasks = JSON.parse(tasksJson);
+    }
+
+    const storedCurrentId = localStorage.getItem('currentId');
+    if (storedCurrentId) {
+      const currentId = Number(localStorage.getItem('currentId'));
+      this.currentId = currentId;
+    }
+  }
+
+  deleteTask(taskId) {
+    let newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
+      if (task.id !== taskId) {
+        newTasks.push(task);
+        
+      }
+    }
+    this.tasks = newTasks;
   }
 }
