@@ -9,7 +9,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
     </div>
     <div class="card-footer">
         Status:
-        <button onclick="changeCardColor()" class="btn btn-success done-button">Mark As Done</button>
+        <button onclick= "changeCardColor()" class="btn btn-success done-button">Mark As Done</button>
         <button class="btn btn-danger delete-button">Delete</button>
     </div>
 </div>
@@ -45,8 +45,7 @@ class TaskManager {
   render() {
     const tasksHtmlList = [];
     for (var i = 0; i < this.tasks.length; i++) {
-      const date = new Date();
-      const formattedDate = date.toDateString();
+
 
       let currentTask = this.tasks[i];
       console.log(currentTask);
@@ -56,7 +55,7 @@ class TaskManager {
         currentTask.newActivity,
         currentTask.newPlace,
         currentTask.aloneOrGroup,
-        formattedDate
+        formatDate(currentTask.newDate)
       );
       tasksHtmlList.push(taskHtml);
     }

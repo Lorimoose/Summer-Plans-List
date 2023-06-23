@@ -1,59 +1,106 @@
 body {
-    background-image: url(https://images.unsplash.com/photo-1500304624028-5b2641868ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: 'Raleway', sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1500304624028-5b2641868ade?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Raleway", sans-serif;
 }
 
+/* Site Heading and Images */
 #title {
-    background-color: rgb(255, 255, 174);
-    color: white;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+  background-color: rgb(255, 255, 174);
+  color: white;
+  padding: 0px;
+  width: 100%;
+}
+.summer-images {
+  height: 100px;
+}
+/* End Heading */
+
+/* Start Form */
+#form {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+#task-btn {
+  background-color: rgb(255, 255, 174);
+  color: #000000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* End Form */
+
+.card {
+  font-size: 1.5rem;
+  background-color: white;
 }
 
-#task-btn {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#new {
+  background-color: rgb(240, 250, 253);
+}
+
+.myStyle {
+  background-color: greenyellow;
+}
+
+#add-another-activity {
+  background-color: rgb(255, 255, 174);
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+}
+
+#click-here-img{
+    height: 400px;
+    width: 500px;
+    border-radius: 5%;
+    margin: 25px auto 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+@media (max-width: 700px) {
+  .summer-images {
+    visibility: hidden;
+    height: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+    #click-here-img {
+        height: 250px;
+        width: 350px;
+    }
+  }
+
+/* #test {
     background-color: rgb(255, 255, 174);
     color: #000000;
     font-weight: bold;
     padding: 12px 20px;
-    border: none;
+    margin: 20px 5px;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.card {
-    font-size: 1.5rem;
-    background-color: white;
-}
-
-#form {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#new {
-    background-color: pink;
- }
-
- .myStyle {
-    background-color: greenyellow;
-}
-
-.summer-images {
-    height: 100px;
-}
-
-@media(max-width:700px) {
-    .summer-images {
-       visibility: hidden;
-       height: 50px;
-    }
- }
+ } */
