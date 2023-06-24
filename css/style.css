@@ -73,7 +73,7 @@ a {
 
 #click-here-img{
     height: 400px;
-    width: 500px;
+    width: 450px;
     border-radius: 5%;
     margin: 25px auto 200px;
     display: flex;
@@ -91,7 +91,7 @@ a {
 @media (max-width: 700px) {
     #click-here-img {
         height: 250px;
-        width: 350px;
+        width: 300px;
     }
   }
 
