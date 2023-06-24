@@ -1,6 +1,6 @@
-function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
+function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date, status) {
   const html = `
-<div id="new" class="card col-auto m-4 "data-task=${id}>
+<div id="new" class="card col-auto m-4 ${status === "TODO" ? "oldStyle" : "myStyle"}" data-task=${id}>
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
@@ -9,7 +9,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date) {
     </div>
     <div class="card-footer">
         Status:
-        <button onclick= "changeCardColor()" class="btn btn-success done-button">Mark As Done</button>
+        <button class="btn btn-success done-button">Mark As Done</button>
         <button class="btn btn-danger delete-button">Delete</button>
     </div>
 </div>
@@ -45,8 +45,6 @@ class TaskManager {
   render() {
     const tasksHtmlList = [];
     for (var i = 0; i < this.tasks.length; i++) {
-
-
       let currentTask = this.tasks[i];
       console.log(currentTask);
 
@@ -55,7 +53,8 @@ class TaskManager {
         currentTask.newActivity,
         currentTask.newPlace,
         currentTask.aloneOrGroup,
-        formatDate(currentTask.newDate)
+        formatDate(currentTask.newDate),
+        currentTask.status
       );
       tasksHtmlList.push(taskHtml);
     }
@@ -67,33 +66,33 @@ class TaskManager {
 
   getTaskById(taskId) {
     let foundTask;
-    for (let i=0; i<this.tasks.length; i++) {
-      let task = this.tasks[i]
+    for (let i = 0; i < this.tasks.length; i++) {
+      let task = this.tasks[i];
       if (task.id === taskId) {
         foundTask = task;
         return foundTask;
       }
     }
   }
-  
+
   save() {
     const tasksJson = JSON.stringify(this.tasks);
-    localStorage.setItem('tasks', tasksJson);
+    localStorage.setItem("tasks", tasksJson);
 
     const currentId = String(this.currentId);
-    localStorage.setItem('currentId', currentId);
+    localStorage.setItem("currentId", currentId);
   }
 
   load() {
-    const storedTasks = localStorage.getItem('tasks');
+    const storedTasks = localStorage.getItem("tasks");
     if (storedTasks) {
-      const tasksJson = localStorage.getItem('tasks');
+      const tasksJson = localStorage.getItem("tasks");
       this.tasks = JSON.parse(tasksJson);
     }
 
-    const storedCurrentId = localStorage.getItem('currentId');
+    const storedCurrentId = localStorage.getItem("currentId");
     if (storedCurrentId) {
-      const currentId = Number(localStorage.getItem('currentId'));
+      const currentId = Number(localStorage.getItem("currentId"));
       this.currentId = currentId;
     }
   }
@@ -104,7 +103,6 @@ class TaskManager {
       let task = this.tasks[i];
       if (task.id !== taskId) {
         newTasks.push(task);
-        
       }
     }
     this.tasks = newTasks;

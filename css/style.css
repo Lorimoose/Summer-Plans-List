@@ -44,16 +44,15 @@ body {
   flex-wrap: wrap;
 }
 
-#new {
-  background-color: rgb(240, 250, 253);
+.oldStyle {
+	background-color: white;
 }
 
 .myStyle {
-  background-color: greenyellow;
-}
-
-#inspiration{
-  background-color: transparent;
+	background-image: url(https://images.unsplash.com/photo-1617957772097-93dc166cd335?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #000000;
 }
 
 #add-another-activity {
