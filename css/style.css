@@ -52,6 +52,10 @@ body {
   background-color: greenyellow;
 }
 
+#inspiration{
+  background-color: transparent;
+}
+
 #add-another-activity {
   background-color: rgb(255, 255, 174);
   padding: 12px 15px;
