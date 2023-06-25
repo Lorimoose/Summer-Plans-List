@@ -12,6 +12,7 @@ body {
   color: white;
   padding: 0px;
   width: 100%;
+  right:0;
 }
 .summer-images {
   height: 100px;
@@ -45,11 +46,11 @@ body {
 }
 
 .oldStyle {
-	background-color: white;
+  background-color: white;
 }
 
 .myStyle {
-	background-image: url(https://images.unsplash.com/photo-1617957772097-93dc166cd335?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80);
+  background-image: url(https://images.unsplash.com/photo-1617957772097-93dc166cd335?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   border: #000000;
@@ -74,29 +75,43 @@ a {
   letter-spacing: 0.05rem;
 }
 
-#click-here-img{
-    height: 400px;
-    width: 450px;
-    border-radius: 5%;
-    margin: 25px auto 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+#click-here-img {
+  height: 400px;
+  width: 450px;
+  border-radius: 5%;
+  margin: 25px auto 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
   .summer-images {
     visibility: hidden;
     height: 25px;
   }
 }
-
-@media (max-width: 700px) {
-    #click-here-img {
-        height: 250px;
-        width: 300px;
-    }
+@media (max-width: 550px) {
+  .summer-images {
+    visibility: hidden;
   }
+  #title {
+    font-size: 2rem;
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  #click-here-img {
+    height: 250px;
+    width: 300px;
+  }
+}
+
+@media (min-width: 550px) {
+  .card-container{
+    margin-left: 100px;
+  }
+}
 
 /* #test {
     background-color: rgb(255, 255, 174);
