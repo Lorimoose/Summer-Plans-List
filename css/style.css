@@ -9,7 +9,6 @@ body {
 /* Site Heading and Images */
 #title {
   background-color: rgb(255, 255, 174);
-  color: white;
   padding: 0px;
   width: 100%;
   right:0;
@@ -37,12 +36,6 @@ body {
 
 .card {
   font-size: 1.5rem;
-  background-color: white;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .oldStyle {
@@ -96,7 +89,7 @@ a {
     visibility: hidden;
   }
   #title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     width: 100%;
   }
 }
@@ -122,3 +115,4 @@ a {
     border-radius: 4px;
     cursor: pointer;
  } */
+

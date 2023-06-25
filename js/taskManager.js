@@ -1,6 +1,6 @@
 function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date, status) {
   const html = `
-<div id="new" class="card col-auto m-4 ${status === "TODO" ? "oldStyle" : "myStyle"}" data-task=${id}>
+<div id="new" class="card col-auto m-3 ${status === "TODO" ? "oldStyle" : "myStyle"}" data-task=${id}>
     <div class="card-body">
         <p class="card-text">Name: ${newActivity}</p>
         <p class="card-text">Place: ${newPlace}</p>
