@@ -45,9 +45,11 @@ function validFormFieldInput(event) {
   taskManager.addTask(newActivity, newPlace, aloneOrGroup, date);
   taskManager.save();
   taskManager.render();
+  document.getElementById("my-activities").scrollIntoView();
 }
 
 submitButton.addEventListener("click", validFormFieldInput);
+
 
 tasksList.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
@@ -67,9 +69,3 @@ tasksList.addEventListener("click", (event) => {
     taskManager.render();
   }
 });
-
-function changeCardColor() {
-    const list = document.getElementById("new").classList;
-    list.add("myStyle");
-  }
-  

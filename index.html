@@ -23,7 +23,7 @@
 
   <body>
     <!--Site Title-->
-    <div id="test"></div>
+    <div id="scroll-to-top"></div>
     <div class="header sticky-top">
       <header class="text-center">
         <h1 id="title" class="display-1 text-dark">
@@ -79,15 +79,14 @@
           </div>
         </div>
 
-        <br />
+        <br/>
 
         <section class="submission my-5">
-          <input id="task-btn" type="submit" value="Let's Do It!" />
+          <button id="task-btn">
+           Let's Do It!
+          </button>
         </section>
       </form>
-      <!-- <button id="test">
-        <a href="#my-activities">Let's Do It!</a>
-      </button> -->
     </section>
 
     <section id="inspiration">
@@ -104,6 +103,7 @@
       </div>
     </section>
 
+ <!--Activity Cards Display-->
     <div>
       <h1 id="my-activities" class="display-1 text-dark text-center">
         My Activities
@@ -113,11 +113,10 @@
           class="fa-solid fa-plus fa-beat-fade fa-lg"
           style="color: #000000"
         ></i>
-        <a href="#test">&nbsp;&nbsp;Add Another Activity!</a>
+        <a href="#scroll-to-top">&nbsp;&nbsp;Add Another Activity!</a>
       </button>
     </div>
 
-    <!--Activity Cards Display-->
     <div class="card-container">
       <div id="root" class="row"></div>
     </div>
