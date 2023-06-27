@@ -9,7 +9,7 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date, status) {
     </div>
     <div class="card-footer">
         Status:
-        <button class="btn btn-success done-button">Mark As Done</button>
+        <button class="btn btn-success done-button ${status === "TODO" ? "visible" : "invisible"}">Mark As Done</button>
         <button class="btn btn-danger delete-button">Delete</button>
     </div>
 </div>
