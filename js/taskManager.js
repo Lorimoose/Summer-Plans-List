@@ -17,9 +17,16 @@ function createTaskHtml(id, newActivity, newPlace, aloneOrGroup, date, status) {
   return html;
 }
 
+// function formatDate(dateInput) {
+//   let taskDate = new Date(dateInput);
+//   let formattedDate = taskDate.toDateString();
+//   return formattedDate;
+// }
+
+
 function formatDate(dateInput) {
   let taskDate = new Date(dateInput);
-  let formattedDate = taskDate.toDateString();
+  let formattedDate = `${taskDate.getUTCMonth() + 1}/${taskDate.getUTCDate()}/${taskDate.getUTCFullYear()}`;
   return formattedDate;
 }
 
